@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0;
+        margin: 0;}
+
+
+        .all{width: 612px;
+        height: 612px;
+        flex-wrap: wrap;
+        border: solid slateblue 1px;
+        margin: 0px auto;}
+
+        .all div{width: 100px;
+        height: 100px;
+        border: coral 1px solid;
+        float: left;
+        position: relative;}
+
+        .hezi div{width: 100px;
+        height: 100px;
+        margin: 80px 100px;
+        position: absolute;}
+    </style>
+</head>
+<body>
+    <div class="hezi">
+        <div draggable="true" style="background-color:tomato ;"></div>
+    </div>
+    <div class="all">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    
+</body>
+</html>
+<script>
+    let all=document.querySelectorAll(".all div");
+
+    let hezi=document.querySelector(".hezi div");
+
+    hezi.ondragstart=function(event){
+        console.log("开始");
+        x=hezi.style.backgroundColor
+        
+        
+        for(let i=0;i<all.length;i++){    
+           
+        all[i].ondragover=function(event){event.preventDefault()}
+        all[i].ondrop=function(event){
+        this.style.backgroundColor=x;
+        let y0=Math.random();
+        y0=parseInt(y0*255);
+        let y1=Math.random();
+        y1=parseInt(y1*255);
+        let y2=Math.random();
+        y2=parseInt(y2*255);
+        console.log;
+        hezi.style.backgroundColor=`rgb(${y0},${y1},${y2})`
+        }
+    }
+    }
+
+   
+    
+    
+
+</script>
